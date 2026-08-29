@@ -24,14 +24,14 @@
 
 | Class | Data members | Methods | Access modifiers | Knows | Does | Must NOT do |
 |-------|--------------|---------|------------------|-------|------|-------------|
-|`Movie` |`string title`<br>`string language`<br>`float duration`|`getTitle()`<br>`getLanguage()`<br>`getDuration()`|`Data: private`<br>`Methods: public`|Title, Language, Duration|Stores information about the movie|Manage seats, bookings, payments|
-| `Seat` | `int seatNumber`<br>`string type` | `getNumber()`<br>`getType()` | `Data: private`<br>`Methods: public` |Seat number, type|Representaion of a physical seat|Booking|
-| `Screen` | `int screenNumber`<br>`vector<Seat> seats` | `getScreenNumber()`<br>`getSeat()`<br>`addSeat()` |`Data: private`<br>`Methods: public`|Screen number, seats|Manages physical seats|Track booking status for the show, payments|
-|`Cinema`|`string name`<br>`vector<Screen> screens`|`getName()`<br>`getScreens()`<br>`addScreens()`|`Data: private`<br>`Methods: public`|Cinema name and screens|Manages screens|Handle payments or bookings|
-|`Show`|`Movie* movie`<br>`Screen* screen`<br>`string startTime`<br>`vector<ShowSeats> showSeats`|`getMovie()`<br>`getStartTime()`<br>`getShowSeats()`<br>`getScreen()`|`Data: private`<br>`Methods: public`|Movie,Screen,Start time,Seats(show specific)|Shows one screening|Manage payments, bookings|
-|`ShowSeat`|`Seat seat`<br>`SeatStatus status`|`getSeat()`<br>`setStatus()`<br>`getStatus()`|`Data: private`<br>`Methods: public`|Seat and it's status (show specific)|Trackes the status of a seat (available/booked)|Booking and payments|
-|`Customer`|`string name`<br>`string phone`|`getName()`<br>`getPhone()`|`Data: private`<br>`Methods: public`|Customer's name, phone number|Stores customer information|Manage bookings and payments|
-|`Booking`|`string bookingId`<br>`Show* show`<br>`vector<ShowSeats*> seats`<br>`double totalAmount`<br>`BookingStatus status`|`getBookingId()`<br>`getShow()`<br>`getSeats()`<br>`getTotalAmount()`<br>`getStatus()`<br>`setStatus()`|`Data: private`<br>`Methods: public`|Booking details|Sotres data about a customer's booking|Print ticket, payment processing|
+|`Movie` |`string title`<br>`string language`<br>`float duration`|`getTitle()`<br>`getLanguage()`<br>`getDuration()`|Data: `private`<br>Methods: `public`|Title, Language, Duration|Stores information about the movie|Manage seats, bookings, payments|
+| `Seat` | `int seatNumber`<br>`SeatType Type` | `getNumber()`<br>`getType()` | Data: `private`<br>Methods: `public` |Seat number, type|Representaion of a physical seat|Booking|
+| `Screen` | `int screenNumber`<br>`vector<Seat> seats` | `getScreenNumber()`<br>`getSeat()`<br>`addSeat()` |Data: `private`<br>Methods: `public`|Screen number, seats|Manages physical seats|Track booking status for the show, payments|
+|`Cinema`|`string name`<br>`vector<Screen> screens`|`getName()`<br>`getScreens()`<br>`addScreens()`|Data: `private`<br>Methods: `public`|Cinema name and screens|Manages screens|Handle payments or bookings|
+|`Show`|`Movie* movie`<br>`Screen* screen`<br>`string startTime`<br>`vector<ShowSeats> showSeats`|`getMovie()`<br>`getStartTime()`<br>`getShowSeats()`<br>`getScreen()`|Data: `private`<br>Methods: `public`|Movie,Screen,Start time,Seats(show specific)|Shows one screening|Manage payments, bookings|
+|`ShowSeat`|`Seat seat`<br>`SeatStatus status`|`getSeat()`<br>`setStatus()`<br>`getStatus()`|Data: `private`<br>Methods: `public`|Seat and it's status (show specific)|Trackes the status of a seat (available/booked)|Booking and payments|
+|`Customer`|`string name`<br>`string phone`|`getName()`<br>`getPhone()`|Data: `private`<br>Methods: `public`|Customer's name, phone number|Stores customer information|Manage bookings and payments|
+|`Booking`|`string bookingId`<br>`Show* show`<br>`vector<ShowSeats*> seats`<br>`double totalAmount`<br>`BookingStatus status`|`getBookingId()`<br>`getShow()`<br>`getSeats()`<br>`getTotalAmount()`<br>`getStatus()`<br>`setStatus()`|Data: `private`<br>Methods: `public`|Booking details|Sotres data about a customer's booking|Print ticket, payment processing|
 
 
 ## Behaviour / Service Classes
@@ -39,10 +39,10 @@
 | Class | Data Members | Methods | Access Specifiers | Knows | Does | Must NOT Do |
 |-------|--------------|---------|-------------------|-------|------|-------------|
 | `Payment` | None | `virtual bool pay(double amount) = 0`<br>`virtual ~Payment()` | Methods: `public` | The basic payment structure | Provides the common payment interface | Handle a specific type of payment |
-| `UpiPayment` | None | `bool pay(double amount) override` | Data: `private`<br>Methods: `public` | Information needed for UPI payment | Handles payments made through UPI | Handle card or cash payments or manage bookings |
-| `CardPayment` | None | `bool pay(double amount) override` | Data: `private`<br>Methods: `public` | Information needed for card payment | Handles payments made through cards | Handle UPI or cash payments or manage bookings |
-| `CashPayment` | None | `bool pay(double amount) override` | Data: `private`<br>Methods: `public` | Information needed for cash payment | Handles cash payments | Handle UPI or card payments or manage bookings |
+| `UpiPayment` |`string upiId` | `bool pay(double amount) override` | Data: `private`<br>Methods: `public` | Information needed for UPI payment | Handles payments made through UPI | Handle card or cash payments or manage bookings |
+| `CardPayment` |`string cardNumber`<br>`string expiryDate` | `bool pay(double amount) override` |Data: `private`<br>Methods: `public` | Information needed for card payment | Handles payments made through cards | Handle UPI or cash payments or manage bookings |
+| `CashPayment` | None | `bool pay(double amount) override` |Methods: `public` | Information needed for cash payment | Handles cash payments | Handle UPI or card payments or manage bookings |
 | `PriceCalculator` | None | `double calculate(vector<Seat>)` | Methods: `public` | The prices of different seat types | Calculates the total price for the selected seats | Handle payments or change booking details |
 | `TicketPrinter` | None | `void print(const Booking&)` | Methods: `public` | The information needed for a ticket | Formats and prints the ticket | Create bookings, handle payments, or calculate prices |
-| `BookingService` | None | `bookSeats()`<br>`cancelBooking()`<br>`processPayment()` | Data: `private`<br>Methods: `public` | The different parts needed to complete a booking | Coordinates the booking process from seat selection to payment and confirmation | Calculate prices, implement payment methods, or format tickets |
-| `Cinema/Menu` | References to `Cinema` / `BookingService` | `displayMenu()`<br>`readInput()`<br>`run()` | Data: `private`<br>Methods: `public` | The available menu options and user input | Shows the menu and takes input from the user | Handle the actual booking logic or business rules |
+| `BookingService` |`Cinema* cinema`<br>`PriceCalculator* calculator` | `bookSeats()`<br>`cancelBooking()`<br>`processPayment()` | Data: `private`<br>Methods: `public` | The different parts needed to complete a booking | Coordinates the booking process from seat selection to payment and confirmation | Calculate prices, implement payment methods, or format tickets |
+| `Cinema/Menu` | `Cinema* cinema`<br>`BookingService* bookingService` | `displayMenu()`<br>`readInput()`<br>`run()` | Data: `private`<br>Methods: `public` | The available menu options and user input | Shows the menu and takes input from the user | Handle the actual booking logic or business rules |

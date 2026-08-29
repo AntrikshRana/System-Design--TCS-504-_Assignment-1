@@ -16,13 +16,13 @@
     8. Cancel a Booking -- the seat becomes AVAILABLE again.
 
 ### What must be submitted
-    1. Requirement analysis (FR + NFR)
-    2. Noun–verb analysis table (list of classes and their methods).
-    3. Relationship table with justification.
-    4. Class Diagram
-    5. Sequence diagram for "book a ticket and make payment".
-    6. Modular working code + demo run.
-    7. SOLID mapping + one thing you deliberately did NOT do.
+    1. [✅]Requirement analysis (FR + NFR)
+    2. [✅]Noun–verb analysis table (list of classes and their methods).
+    3. [✅]Relationship table with justification.
+    4. []Class Diagram
+    5. []Sequence diagram for "book a ticket and make payment".
+    6. []Modular working code + demo run.
+    7. []SOLID mapping + one thing you deliberately did NOT do.
 
 
 ### CLEAN CODE CHECKLIST

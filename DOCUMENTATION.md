@@ -13,4 +13,6 @@
     - Decided the data members and methods, their types, what they know, what the do, and what they must NOT do.
     - Did this for both core classes and service/behaviour classes.
 
-    
+### 29/08/2026 : Relationships
+    - Decided the realtion between the given classes.
+    - This will help in making the class diagram later.
