@@ -16,3 +16,7 @@
 ### 29/08/2026 : Relationships
     - Decided the realtion between the given classes.
     - This will help in making the class diagram later.
+
+### 31/08/2026 : Class Diagram
+    - Finished class diagram
+    - added all the realtions with multiplicities.
