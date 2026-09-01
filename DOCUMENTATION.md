@@ -20,3 +20,9 @@
 ### 31/08/2026 : Class Diagram
     - Finished class diagram
     - added all the realtions with multiplicities.
+
+### 01/09/2026 : Wrote classes
+    - Screen
+    - Seat
+    - ShowSeat
+    - all of these classes were written but not sure if correct (might change later)
