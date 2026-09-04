@@ -10,7 +10,9 @@ public:
     Cinema(std::string name) : name(name) {}
 
     ~Cinema(){
-        for(Screen* s : screens) { delete s; }
+        for(Screen* s : screens){
+                delete s;
+        }
     }
 
     std::string getName() const { return name; }

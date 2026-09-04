@@ -6,6 +6,9 @@ private:
     std::string phone;
 
 public:
-    std::string getName() { return name; }
-    std::string getPhone() { return phone; }
+    Customer(std::string name, std::string phone) :
+        name(name), phone(phone) {}
+
+    std::string getName() const { return name; }
+    std::string getPhone() const { return phone; }
 };

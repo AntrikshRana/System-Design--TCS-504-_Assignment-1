@@ -11,5 +11,7 @@ public:
 
     Seat* getSeat() const { return seat; }
     void setStatus(SeatStatus status) { this->status = status; }
-    SeatStatus getStatus() const { return type; }
+    SeatStatus getStatus() const { return status; }
+
+    bool isAvailable() const { return status==SeatStatus::AVAILABLE; }
 };
