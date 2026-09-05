@@ -1,5 +1,7 @@
-#include <vector>
-#include <string>
+enum class SeatStatus{
+    AVAILABLE,
+    BOOKED
+};
 
 class ShowSeat{
 private:
