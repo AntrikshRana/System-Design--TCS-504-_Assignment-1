@@ -32,3 +32,10 @@
     - Completed entire code.
     - Updated class-diagram.png (to show aggregation).
     - check all the test cases
+
+## Aroung 11:40PM same day
+    - Completed the sequence diagram.
+
+
+Sequence diagram was the final addition and the assignment is complete.
+----------------------------x------------------------------------------

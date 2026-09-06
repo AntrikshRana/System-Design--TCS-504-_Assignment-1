@@ -20,7 +20,7 @@
     2. [✅]Noun–verb analysis table (list of classes and their methods).
     3. [✅]Relationship table with justification.
     4. [✅]Class Diagram
-    5. []Sequence diagram for "book a ticket and make payment".
+    5. [✅]Sequence diagram for "book a ticket and make payment".
     6. [✅]Modular working code + demo run.
     7. [✅]SOLID mapping + one thing you deliberately did NOT do.
 
