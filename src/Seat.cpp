@@ -1,5 +1,6 @@
 #include <vector>
 #include <string>
+using namespace std;
 
 enum class SeatType { SILVER, GOLD, PLATINUM };
 
@@ -12,7 +13,7 @@ inline double priceForSeatType(SeatType type){
     return 0.0;
 }
 
-inline std::string seatTypeToString(SeatType type){
+inline string seatTypeToString(SeatType type){
     switch(type){
         case SeatType::SILVER : return "SILVER";
         case SeatType::GOLD : return "GOLD";
@@ -23,13 +24,13 @@ inline std::string seatTypeToString(SeatType type){
 
 class Seat{
 private:
-    std::string seatNumber;
+    string seatNumber;
     SeatType type;
 
 public:
-    Seat(std::string seatNumber, SeatType type) :
+    Seat(string seatNumber, SeatType type) :
         seatNumber(seatNumber),type(type) {}
 
-    std::string getScreenNumber() const { return seatNumber; }
+    string getNumber() const { return seatNumber; }
     SeatType getType() const { return type; }
 };

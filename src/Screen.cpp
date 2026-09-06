@@ -1,10 +1,12 @@
 #include <vector>
 #include <string>
+using namespace std;
 
 class Screen{
 private:
+    // Encapsulation: screen data is private.
     int screenNumber;
-    std::vector<Seat*> seats;
+    vector<Seat*> seats; // Composition: Screen owns its seats.
 
 public:
     Screen(int screenNumber) : screenNumber(screenNumber) {}
@@ -17,9 +19,9 @@ public:
 
     int getScreenNumber() const { return screenNumber; }
 
-    void addSeat(std::string seatNumber, SeatType type){
+    void addSeat(string seatNumber, SeatType type){
         seats.push_back(new Seat(seatNumber, type));
     }
 
-    const std::vector<Seat*>& getSeats() const { return seats; }
+    const vector<Seat*>& getSeats() const { return seats; }
 };

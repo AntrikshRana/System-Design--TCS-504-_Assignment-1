@@ -5,7 +5,7 @@ enum class SeatStatus{
 
 class ShowSeat{
 private:
-    Seat* seat;
+    Seat* seat; // Aggregation: refers to an existing Seat.
     SeatStatus status;
 
 public:

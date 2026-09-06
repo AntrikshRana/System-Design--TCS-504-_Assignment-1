@@ -1,13 +1,15 @@
 #include <string>
 #include <vector>
+using namespace std;
 
 class Cinema{
 private:
-    std::string name;
-    std::vector<Screen*> screens;
+    // Encapsulation: cinema data is private.
+    string name;
+    vector<Screen*> screens; // Composition: Cinema owns its screens.
 
 public:
-    Cinema(std::string name) : name(name) {}
+    Cinema(string name) : name(name) {}
 
     ~Cinema(){
         for(Screen* s : screens){
@@ -15,11 +17,11 @@ public:
         }
     }
 
-    std::string getName() const { return name; }
+    string getName() const { return name; }
 
     void addScreen(Screen* screen){
         screens.push_back(screen);
     }
 
-    const std::vector<Screen*>& getScreens() const { return screens; }
+    const vector<Screen*>& getScreens() const { return screens; }
 };

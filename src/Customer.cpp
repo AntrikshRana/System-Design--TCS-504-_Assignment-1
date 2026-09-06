@@ -1,14 +1,15 @@
 #include <string>
+using namespace std;
 
 class Customer{
 private:
-    std::string name;
-    std::string phone;
+    string name;
+    string phone;
 
 public:
-    Customer(std::string name, std::string phone) :
+    Customer(string name, string phone) :
         name(name), phone(phone) {}
 
-    std::string getName() const { return name; }
-    std::string getPhone() const { return phone; }
+    string getName() const { return name; }
+    string getPhone() const { return phone; }
 };

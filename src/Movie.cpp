@@ -1,17 +1,18 @@
 #include <vector>
 #include <string>
+using namespace std;
 
 class Movie{
 private:
-    std::string title;
-    std::string language;
+    string title;
+    string language;
     float duration;
 
 public:
-    Movie(std::string title, std::string language, float duration) :
+    Movie(string title, string language, float duration) :
         title(title), language(language), duration(duration) {}
 
-    std::string getTitle() { return title; }
-    std::string getLanguage() const { return language; }
+    string getTitle() { return title; }
+    string getLanguage() const { return language; }
     float getDuration() const { return duration; }
 };

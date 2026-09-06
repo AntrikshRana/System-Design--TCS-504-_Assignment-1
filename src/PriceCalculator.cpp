@@ -1,11 +1,14 @@
 #include <vector>
+using namespace std;
 
+// SOLID: Single Responsibility Principle - calculates prices only.
 class PriceCalculator{
 public:
-    double calculate(const std::vector<ShowSeat*& seats) const {
+    // Compile-time polymorphism: no overloads or templates are used here.
+    double calculate(const vector<ShowSeat*>& seats) const {
         double total = 0.0;
 
-        for(Showseat* s : seats){
+        for(ShowSeat* s : seats){
             total += priceForSeatType(s->getSeat()->getType()); 
         }
         return total;
