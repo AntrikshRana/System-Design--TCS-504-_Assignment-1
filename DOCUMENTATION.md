@@ -26,3 +26,9 @@
     - Seat
     - ShowSeat
     - all of these classes were written but not sure if correct (might change later)
+
+### 06/09/2026 : Final completion
+    - Made the sequence diagram.
+    - Completed entire code.
+    - Updated class-diagram.png (to show aggregation).
+    - check all the test cases

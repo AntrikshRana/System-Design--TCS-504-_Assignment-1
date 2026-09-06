@@ -21,18 +21,17 @@
     3. [✅]Relationship table with justification.
     4. [✅]Class Diagram
     5. []Sequence diagram for "book a ticket and make payment".
-    6. []Modular working code + demo run.
-    7. []SOLID mapping + one thing you deliberately did NOT do.
+    6. [✅]Modular working code + demo run.
+    7. [✅]SOLID mapping + one thing you deliberately did NOT do.
 
 
 ### CLEAN CODE CHECKLIST
-
-• [ ] intention-revealing names — bookedSeatCount, not bsc or c1 
-• [ ] no number-series names — no list1, list2, temp1 
-• [ ] every function does ONE thing; if you need "and" to describe it, split it 
-• [ ] no function longer than ~20 lines 
-• [ ] maximum 2 levels of indentation; name your conditions (bool isSeatFree = ...; if (isSeatFree && isPaid)) 
-• [ ] 0–2 parameters preferred; 4+ means they want to become a struct/class 
-• [ ] no side effects — a function named showSeats() must not book anything 
-• [ ] constants instead of magic numbers — SILVER_PRICE, not 150 
-• [ ] no repeated code (DRY) 
+    - [✅] intention-revealing names — bookedSeatCount, not bsc or c1 
+    - [✅] no number-series names — no list1, list2, temp1 
+    - [✅] every function does ONE thing; if you need "and" to describe it, split it 
+    - [✅] no function longer than ~20 lines 
+    - [✅] maximum 2 levels of indentation; name your conditions (bool isSeatFree = ...; if (isSeatFree && isPaid)) 
+    - [✅] 0–2 parameters preferred; 4+ means they want to become a struct/class 
+    - [✅] no side effects — a function named showSeats() must not book anything 
+    - [✅] constants instead of magic numbers — SILVER_PRICE, not 150 
+    - [✅] no repeated code (DRY) 
